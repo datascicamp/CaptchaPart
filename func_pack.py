@@ -32,7 +32,7 @@ def create_captcha_by_code(captcha_code):
     return img
 
 
-# call this function to create a captcha image and its code
+# call this function to create a captcha image and its code without giving a captcha code
 def create_captcha_by_identifiers():
     # Identifiers set (a string)
     identifiers = Config.identifiers

@@ -6,7 +6,7 @@ from werkzeug.http import HTTP_STATUS_CODES
 from io import BytesIO
 
 
-# generate a captcha
+# generate a captcha based on code you given
 @app.route('/api/captcha', methods=['POST'])
 def generate_captcha_by_code():
     captcha_code = request.form.get('captcha_code')
@@ -21,7 +21,7 @@ def generate_captcha_by_code():
     return response
 
 
-# generate a captcha
+# generate a captcha with random identifier
 @app.route('/api/captcha', methods=['GET'])
 def generate_captcha_by_identifier():
     captcha_image, captcha_code = create_captcha_by_identifiers()
