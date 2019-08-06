@@ -5,9 +5,6 @@ from config import Config
 
 # call this function to create a captcha image and its code
 def create_captcha_by_code(captcha_code):
-    # Identifiers set (a string)
-    # identifiers = Config.identifiers
-    identifiers = captcha_code
     # Image size: 130 x 50
     img_width = 130
     img_height = 50
