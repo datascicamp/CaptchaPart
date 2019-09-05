@@ -21,6 +21,21 @@ def generate_captcha_by_code():
     return response
 
 
+# generate a captcha based on code you given in GET method
+@app.route('/api/captcha/<string:captcha_code>', methods=['GET'])
+def generate_captcha_by_code_in_get(captcha_code):
+    captcha_image = create_captcha_by_code(captcha_code)
+    # image saved in buffer
+    buffer = BytesIO()
+    captcha_image.save(buffer, 'jpeg')
+    buf_str = buffer.getvalue()
+    response = make_response(buf_str)
+    response.headers['Content-Type'] = 'image/gif'
+    response.headers['CAPTCHA'] = captcha_code
+    # save image in session field
+    return response
+
+
 # generate a captcha with random identifier
 @app.route('/api/captcha', methods=['GET'])
 def generate_captcha_by_identifier():
