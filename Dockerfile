@@ -6,6 +6,8 @@ MAINTAINER Leon "leontian1024@gmail.com"
 WORKDIR /var/app/webServerDir
 # Add source code from os into container
 Add . /var/app/webServerDir
+# Add Linux font Tool
+RUN apt install fontconfig -y
 # Import packages
 RUN pip install Flask
 RUN pip install Flask-wtf
