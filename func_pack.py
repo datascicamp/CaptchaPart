@@ -12,7 +12,7 @@ def create_captcha_by_code(captcha_code):
     img = Image.new('RGB', (img_width, img_height), 'white')
     # set image font
     # fc-list :lang=en (check font in this machine)
-    font = ImageFont.truetype('DejaVu Serif', size=40)
+    font = ImageFont.truetype('./Andale Mono.ttf', size=40)
     # create draw
     draw = ImageDraw.Draw(img)
     draw.text((5+random.randint(4, 7)+20, 5+random.randint(3, 7)), text=captcha_code, fill='black', font=font)
