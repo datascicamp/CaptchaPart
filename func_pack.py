@@ -40,7 +40,7 @@ def create_captcha_by_identifiers():
     # create a image object
     img = Image.new('RGB', (img_width, img_height), 'white')
     # set image font
-    font = ImageFont.truetype('DejaVu Serif', size=40)
+    font = ImageFont.truetype('./Andale Mono.ttf', size=40)
     # create draw
     draw = ImageDraw.Draw(img)
     captcha_code = ''
