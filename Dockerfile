@@ -7,6 +7,7 @@ WORKDIR /var/app/webServerDir
 # Add source code from os into container
 Add . /var/app/webServerDir
 # Add Linux font Tool
+RUN apt-get update
 RUN apt install fontconfig -y
 # Import packages
 RUN pip install Flask
