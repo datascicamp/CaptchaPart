@@ -12,6 +12,7 @@ RUN apt install fontconfig -y
 # Import packages
 RUN pip install Flask
 RUN pip install Flask-wtf
+RUN pip install flask_bootstrap
 RUN pip install pillow
 RUN pip install psycopg2-binary
 RUN pip install python-dotenv
