@@ -8,7 +8,25 @@
 
         <h1>Developers Guide & Tutorial</h1>
         <br>
-        <h3>API usages</h3>
+        <h3>CAPTCHA Module tutorial</h3>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>First, use GET method query uri '/api/hash-match/captcha' to get a hash-CAPTCHA pair.</h4>
+                    <h4>(P.S. the hash-CAPTCHA pair is maintained in Response.Headers.CAPTCHA and Response.Headers.Hash-Code)</h4>
+                    <h4>Then, using the hash code you've been given query uri '/api/captcha/hash-code/< hash_code >', you
+                     will get an CAPTCHA image with the CAPTCHA code you already have.</h4>
+                    <h4>Finally, DO NOT forget to remove the expired hash-CAPTCHA pair by using '/api/captcha/hash-code/< seconds-passed >'
+                     with DELETE method.</h4>
+                </div>
+                <div class="panel-footer">
+                    <b>Leon</b> at 2019-09-19/17:00:00
+                    <p>Thanks for using my CAPTCHA module.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>API usage details</h3>
         <br>
 
         <!-- 已发表的言论 -->

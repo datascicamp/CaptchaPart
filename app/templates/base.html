@@ -26,7 +26,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="https://github.com/XinyaoTian">By - LeonTian </a></li>
-                        <li><a>v1.00</a></li>
+                        <li><a>v1.0</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,5 +47,23 @@
             {# So, others templates should write about this part #}
             {% block app_content %}{% endblock %}
         </div>
+        {%- block footer %}
+            <br>
+            <br>
+            <br>
+            <!-- Footer -->
+            <footer class="page-footer font-small indigo">
+
+              <!-- Copyright -->
+              <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="https://github.com/XinyaoTian">LeonTian</a>
+              </div>
+              <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+        {%- endblock footer %}
     {% endblock %}
+
+
 
