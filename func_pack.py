@@ -101,18 +101,18 @@ def get_last_date():
 
 # 生成过去某日相对此刻的 utc 时间
 def get_passed_utc_date_by_seconds(seconds):
-    now = datetime.now()
+    now = datetime.utcnow()
     passed_date = now - timedelta(seconds=seconds)
-    return str(passed_date.utcnow())
+    return str(passed_date)
 
 
 # 生成过去某日相对此刻的 utc 时间
 def get_future_utc_date_by_seconds(seconds):
-    now = datetime.now()
+    now = datetime.utcnow()
     passed_date = now + timedelta(seconds=seconds)
-    return str(passed_date.utcnow())
+    return str(passed_date)
 
 
 if __name__ == '__main__':
-    print(get_passed_utc_date_by_seconds(0))
+    print(get_passed_utc_date_by_seconds(600))
     pass

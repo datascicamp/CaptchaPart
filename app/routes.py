@@ -8,10 +8,10 @@ def usage():
     usages = [
         {'api_format': '/api/hash-match/captcha', 'method': 'GET',
          'Warning': 'Default 4 Characters.',
-         'description': 'Get a CAPTCHA code and a matching hash code in Response.headers.CAPTCHA'
-                        ' and Response.headers.Hash-Code field. Then you can use'
-                        ' /api/captcha/hash-code/<string:hash_code> to get captcha code by hash code.'},
-        {'api_format': '/api/captcha/hash-code/<string:hash_code>', 'method': 'GET',
+         'description': 'Get a CAPTCHA code and a matching hash code in Response.content.CAPTCHA'
+                        ' and Response.content.Hash-Code field. Then you can use'
+                        ' /api/hash-match/captcha/<string:hash_code> to get captcha code by hash code.'},
+        {'api_format': '/api/hash-match/captcha/<string:hash_code>', 'method': 'GET',
          'Warning': 'Default 4 Characters.',
          'description': 'Get a CAPTCHA image in HTTP.content and its code in Response.headers.CAPTCHA field'
                         ' through your hash code which already given in /api/hash-match/captcha.'},
