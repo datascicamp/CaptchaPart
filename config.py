@@ -8,3 +8,8 @@ class Config(object):
 
     # Identifiers when generating CAPTCHA
     identifiers = 'ABCDEFGHIJKLMNPQRSTUVWXYZ12345789'
+
+    # for hash-captcha matching
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -1,5 +1,6 @@
 from PIL import Image, ImageFont, ImageDraw, ImageFilter
 import random
+from datetime import datetime, timedelta
 from config import Config
 
 
@@ -63,7 +64,55 @@ def create_captcha_by_identifiers():
     return img, captcha_code
 
 
+# generate random code from identifiers
+def generate_random_captcha_code():
+    # Identifiers set (a string)
+    identifiers = Config.identifiers
+    captcha_code = ''
+    for item in range(4):
+        text = random.choice(identifiers)
+        captcha_code += text
+    return captcha_code
+
+
+# 随机生成唯一编码
+def create_random_hash():
+    nowtime = datetime.now().strftime("%Y%m%d%H%M%S")
+    hash_code = hash(nowtime)
+    # 绝对值处理
+    if hash_code < 0 :
+        hash_code = str(abs(hash_code))
+    else:
+        hash_code = str(hash_code)
+    # 再添加随机位确保哈希值不重复
+    seed = "abcdef"
+    title = ""
+    for _ in range(6):
+        title = title + random.choice(seed)
+    return str(title + hash_code)
+
+
+# 生成上一天日期
+def get_last_date():
+    now = datetime.now()
+    last_datetime = now - timedelta(days=1)
+    return str(last_datetime.strftime("%Y-%m-%d"))
+
+
+# 生成过去某日相对此刻的 utc 时间
+def get_passed_utc_date_by_seconds(seconds):
+    now = datetime.now()
+    passed_date = now - timedelta(seconds=seconds)
+    return str(passed_date.utcnow())
+
+
+# 生成过去某日相对此刻的 utc 时间
+def get_future_utc_date_by_seconds(seconds):
+    now = datetime.now()
+    passed_date = now + timedelta(seconds=seconds)
+    return str(passed_date.utcnow())
+
+
 if __name__ == '__main__':
-    image, code = create_captcha_by_identifiers()
-    image.save('captcha.jpeg')
-    print(code)
+    print(get_passed_utc_date_by_seconds(0))
+    pass
